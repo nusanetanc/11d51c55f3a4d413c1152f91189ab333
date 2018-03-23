@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="tv-container">
+      <div class="row">
+        <div class="ads-1">
+          <video width="570" height="760" autoplay muted loop>
+            <source src="./ads1/1.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="tv">
+          <iframe frameborder="0" width="1350" height="760" src="//www.dailymotion.com/embed/video/x4nwi47?autoplay=1" allowfullscreen></iframe>
+        </div>
+      </div>
+      <div class="row">
+        <div class="ads-2">
+          <video width="1450" height="265" autoplay muted loop>
+            <source src="./ads2/2.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="ads-3">
+          <video width="470" height="265" autoplay muted loop>
+            <source src="./ads3/3.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+      <div class="row">
+        <div class="clock" id="clock"></div>
+        <div class="running-text">
+          <marquee style="color:#fff; text-align: center;">Jangan biarkan beban hidupmu berat hanya karena bingung memilih hadiah di hari kasih sayang - Gak ribet harus cari baju / cokelat / perhiasan dulu untuk orang yang kamu sayangi! Itu di Jaman OLD!! - Jaman NOW, cukup dengan memberikan domain .love semua akan terukir dengan indahnya dan menjadi moment terpenting dalam hidupmu - Hanya ada di Idcolo! - Tunggu apa lagiii .. - 
+          Promo hanya 2 hari saja!! - Diskon 50% lho ..</marquee>
+        </div>
+      </div>
+    </div>
+      <!--
+      <div class="row">
+        <div class="col" style="background-color:#444;width:570px;height:760px;">
+          <video width="570" height="760" autoplay muted>
+            <source src="./ads1/1.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="col">
+          <iframe frameborder="0" width="1350" height="760" src="//www.dailymotion.com/embed/video/x4nwi47?autoplay=1" allowfullscreen></iframe>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <video width="1303" height="265" autoplay muted>
+            <source src="./ads2/2.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="col">
+          <video width="618" height="265" autoplay muted>
+            <source src="./ads3/3.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+      -->
+    
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script>
+    
+    var today = new Date();
+    var h = today.getHours();
+    var m = today.getMinutes();
+    m = checkTime(m);
+    document.getElementById('clock').innerHTML =
+    h + ":" + m + " WIB";
+    var t = setTimeout(startTime, 500);
+    
+    function checkTime(i) {
+        if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+        return i;
+    }
+    </script>
+  </body>
+</html>

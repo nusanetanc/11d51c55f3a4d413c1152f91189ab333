@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="UTF-8"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <meta name="author" content=""/>
+    <meta name="language" content=""/>
+    <meta name="description" content=""/>
+    <meta name="google-site-verification" content=""/>
+    <meta property="og:url" content=""/>
+    <meta property="og:title" content=""/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:description" content=""/>
+    <meta property="og:image" content=""/>
+    <meta name="twitter:description" content=""/>
+    <meta name="twitter:image:src" content=""/>
+    <meta name="twitter:title" content=""/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:site" content=""/>
+    <meta name="twitter:creator" content=""/>
+    <link rel="shortcut icon" href=""/>
+    <link rel="stylesheet" href="css/style.css"/>
+    <!-- Bootstrap CSS Fontawesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+    <title>Andal Advertise - Login</title>
+    <!-- Structure content implementation -->
+    <style type="text/css">
+      .login-container {
+        background: linear-gradient(to top, #e1e1e1, #f8fcff);
+        height:100vh;
+        padding:80px 15px;
+      }
+      .login-card {
+        margin:0 auto;
+        max-width:400px;
+        padding:40px 50px 70px 50px;
+        text-align:center;
+      }
+      .login-card img {
+        height:80px;
+        margin:0 0 40px 0;
+      }
+      .login-card form input {
+        margin-bottom:10px;
+        padding-bottom:9px;
+      }
+      .login-card ::placeholder {
+        color: #aaa;
+        font-size:14px;
+        opacity: 1;
+      }
+      .login-card :-ms-input-placeholder {
+        color: #999;
+      }
+      .login-card ::-ms-input-placeholder {
+        color: #999;
+      }
+      .login-footer {
+        text-align: center;
+        margin: 50px 0;
+        font-size: 14px;
+        color: #999;
+      }
+
+      
+      /* Andal component */
+      .andal-button {
+        background: linear-gradient(-90deg, #bbb, #777);
+        border:0px;
+        font-size:13px;
+        padding-top:12px;
+        padding-bottom:12px !important;
+        color:#fff;
+        font-weight:300;
+        letter-spacing:0.6px;
+        width:100%;
+        margin-top:15px;
+        border-radius:3px;
+      }
+      .andal-card {
+        background-color:#fff;
+        transition: box-shadow .30s;
+        box-shadow: 0 3px 9px 1px rgba(46,61,73,0.1);
+        border-radius:3px;
+      }
+      .andal-card:hover {
+        box-shadow: 0 1px 1px 0px rgba(46,61,73,0.1);
+        transition: box-shadow .30s;
+      }
+      
+      
+      
+      
+      .navbar-container {
+        background: linear-gradient(-90deg, #777, #575454);
+      }
+      .admin-navbar {
+        max-width:800px;
+        margin:0 auto;
+      }
+      .add-card {
+        margin-top: 30px;
+        margin-bottom: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="navbar-container">
+      <nav class="navbar navbar-expand-lg navbar-dark admin-navbar">
+          <a class="navbar-brand" href="#">Andal Advertise</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                  <a class="nav-link" href="https://tv-advertisement-purwanto1337.c9users.io/admin/ads">Ad <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                  <a class="nav-link" href="https://tv-advertisement-purwanto1337.c9users.io/admin/tv">Tv <span class="sr-only">(current)</span></a>
+                </li>
+            </div>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+              <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                      
+              </ul>
+              <form class="form-inline my-2 my-lg-0"> 
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Logout</button>
+              </form>
+          </div>
+      </nav>
+      
+      
+    </div>
+    <div style="max-width:800px;margin:0 auto;margin-top:50px;">
+    <div class="alert alert-primary" role="alert">
+      This is a primary alert—check it out!
+    </div>
+      <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <!--
+        <li class="nav-item">
+          <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Dashboard</a>
+        </li>
+        -->
+        <li class="nav-item">
+          <a class="nav-link active" id="profile-tab" data-toggle="tab" href="#AdsList" role="tab" aria-controls="profile" aria-selected="false">Ads List</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="contact-tab" data-toggle="tab" href="#CreateAds" role="tab" aria-controls="contact" aria-selected="false">Create Ads</a>
+        </li>
+      </ul>
+      <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade add-card" id="AdsList" role="tabpanel" aria-labelledby="profile-tab">
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Type</th>
+                <th scope="col">advertisement</th>
+                <th scope="col">Place</th>
+                <th scope="col">Views</th>
+                <th scope="col">Advertiser</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% adss.forEach(function(ads){ %>
+              <tr>
+                <th scope="row"><%= ads.type %></th>
+                <% if(ads.type == "runningtext"){ %>
+                <td><%= ads.words %></td>
+                <% } else { %>
+                <td><a href="https://tv-advertisement-purwanto1337.c9users.io/ads/<%= ads.imageId %>.mp4"><%= ads.imageId %></a></td>
+                <% } %>
+                <td><%= ads.city %> - <%= ads.place %></td>
+                <td><%= ads.imprasion %><%= ads.dateStart %><%= ads.dateStop %></td>
+              </tr>
+              <% }) %>
+            </tbody>
+          </table>
+        </div>
+        <div class="tab-pane fade add-card" id="CreateAds" role="tabpanel" aria-labelledby="contact-tab">
+          <div class="container">
+            <form method="post" action="/ads/add" encType="multipart/form-data" novalidate>
+              <div class="form-group">
+                <label for="exampleInputEmail1">Type</label>
+                 <div class="row" id="exampleInputEmail1" name="exampleInputEmail1">
+                  <div class="col">
+                    <div class="form-check">
+                      <input onclick="javascript:typeadsCheck();" class="form-check-input position-static" type="radio" name="adsOption" id="ads1" value="ads1" aria-label="...">
+                      <label class="form-check-label" for="ads1">
+                        Ads 1
+                      </label>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="form-check">
+                      <input onclick="javascript:typeadsCheck();" class="form-check-input position-static" type="radio" name="adsOption" id="ads2" value="ads2" aria-label="...">
+                      <label class="form-check-label" for="ads2">
+                        Ads 2
+                      </label>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="form-check">
+                      <input onclick="javascript:typeadsCheck();" class="form-check-input position-static" type="radio" name="adsOption" id="ads3" value="ads3" aria-label="...">
+                      <label class="form-check-label" for="ads3">
+                        Ads 3
+                      </label>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="form-check">
+                      <input onclick="javascript:typeadsCheck();" class="form-check-input position-static" type="radio" name="adsOption" id="runningtext" value="runningtext" aria-label="...">
+                      <label class="form-check-label" for="runningtext">
+                        Running Text
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group" id="adsForm" style="display:none">
+                <label for="exampleInputEmail1">Upload</label>
+                <div class="input-group mb-3">
+                  <div class="custom-file">
+                    <input type="file" class="custom-file-input" id="sampleFile" name="sampleFile">
+                    <label class="custom-file-label" for="sampleFile">Choose file</label>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group" id="runningtextForm" name="runningtextForm" style="display:none">
+                <label for="exampleInputEmail1">Words</label>
+                <textarea class="form-control" id="wordsText" name="wordsText" rows="3"></textarea>
+              </div>
+              <div class="form-group">
+                <label for="placeOption">Place</label>
+                <select class="custom-select" id="placeOption" name="placeOption">
+                  <option value="Starbuck">Starbuck</option>
+                  <option value="Coffe Bean">Coffe Bean</option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="cityOption">City</label>
+                <select class="custom-select" id="cityOption" name="cityOption">
+                   <option value="Jakarta">Jakarta</option>
+                   <option value="Bandung">Bandung</option>
+                   <option value="Pekanbaru">Pekanbaru</option>
+                </select>
+              </div>
+              <div class="form-group" id="dateForm">
+                <label for="exampleInputEmail1">Date</label>
+                <div class="row" id="dateShowing" name="dateShowing">
+                  <div class="col">
+                    <input type="date" id="dateStart" name="dateStart" class="form-control">
+                  </div>
+                  <div class="col">
+                    <input type="date" id="dateStop" name="dateStop" name="dateStop" class="form-control">
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="exampleInputEmail1">Advertiser</label>
+                <select class="custom-select" id="AdvertiserOption" name="AdvertiserOption">
+                  <option selected disabled>Choose...</option>
+                  <option value="Nusanet">Nusanet</option>
+                  <option value="Groovy">Groovy</option>
+                  <option value="Idcolo">Idcolo</option>
+                </select>
+              </div>
+               <input class="btn btn-lg btn-outline-secondary" type="submit" value="SUBMIT"/>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript">
+    
+    function typeadsCheck() { 
+        if (document.getElementById('ads1').checked) {
+            document.getElementById('adsForm').style.display = 'block';
+            document.getElementById('runningtextForm').style.display = 'none';
+        }
+        else if (document.getElementById('ads2').checked) {
+            document.getElementById('adsForm').style.display = 'block';
+            document.getElementById('runningtextForm').style.display = 'none';
+        }
+        else if (document.getElementById('ads3').checked) {
+            document.getElementById('adsForm').style.display = 'block';
+            document.getElementById('runningtextForm').style.display = 'none';
+        }
+        else if (document.getElementById('runningtext').checked) {
+            document.getElementById('adsForm').style.display = 'none';
+            document.getElementById('runningtextForm').style.display = 'block';
+        }
+        else{
+            document.getElementById('adsForm').style.display = 'none';
+            document.getElementById('runningtextForm').style.display = 'none';
+        }
+    
+    }
+    function typeviewCheck() { 
+        if (document.getElementById('views1').checked) {
+            document.getElementById('adsForm').style.display = 'block';
+            document.getElementById('runningtextForm').style.display = 'none';
+        }
+        else if (document.getElementById('views2').checked) {
+            document.getElementById('adsForm').style.display = 'block';
+            document.getElementById('runningtextForm').style.display = 'none';
+        }
+        else{
+            document.getElementById('adsForm').style.display = 'none';
+            document.getElementById('runningtextForm').style.display = 'none';
+        }
+    
+    }
+    
+    </script>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>

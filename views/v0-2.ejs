@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="tv-container">
+      <div class="row">
+        <div class="ads-1">
+          <video id="ads1" src="./ads/1.mp4" width="570" height="760" style="background:white" autoplay muted>
+          </video>
+        </div>
+        <div class="tv">
+          <iframe frameborder="0" width="1350" height="760" src="https://www.youtube.com/embed/FcEfFCGygWY?autoplay=1" allowfullscreen></iframe>
+        </div>
+      </div>
+      <div class="row">
+        <div class="ads-2">
+          <video id="ads2" src="./ads/2.mp4" width="1450" height="265" style="background:white" autoplay muted>
+          </video>
+        </div>
+        <div class="ads-3">
+          <video id="ads3" src="./ads/4.mp4" width="470" height="265" style="background:white" muted autoplay>
+          </video>
+        </div>
+      </div>
+      <div class="row">
+        <div class="running-text">
+          <marquee style="color:#fff; text-align: center;">
+            <% adss.forEach(function(ads){ 
+            if(ads.type == "runningtext"){
+            %>
+              <%= ads.words %> - 
+            <% } })%>
+          </marquee>
+        </div>
+      </div>
+    </div>
+          <!--
+      <div class="row">
+        <div class="col" style="background-color:#444;width:570px;height:760px;">
+          <video width="570" height="760" autoplay muted>
+            <source src="./ads1/1.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="col">
+          <iframe frameborder="0" width="1350" height="760" src="//www.dailymotion.com/embed/video/x4nwi47?autoplay=1" allowfullscreen></iframe>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <video width="1303" height="265" autoplay muted>
+            <source src="./ads2/2.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="col">
+          <video width="618" height="265" autoplay muted>
+            <source src="./ads3/3.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>next video <video> javascript
+      -->
+    
+    <!--
+    
+    
+    -->
+    <!-- Optional JavaScript -->
+    
+    <script>
+
+     //next video ads1
+    var myvid1 = document.getElementById('ads1');
+      var myvid1s = [<% adss.forEach(function(ads){ 
+            if(ads.type == "ads1"){
+            %>"./ads/<%= ads.imageId %>.mp4",<% } })%>];
+      var activeVideo = 0;
+      myvid1.addEventListener('ended', function(e) {
+        // update the new active video index
+        activeVideo = (++activeVideo) % myvid1s.length;
+        // update the video source and play
+        myvid1.src = myvid1s[activeVideo];
+        myvid1.play();
+      });
+     //next video ads2
+    var myvid2 = document.getElementById('ads2');
+      var myvid2s = [<% adss.forEach(function(ads){ 
+            if(ads.type == "ads2"){
+            %>"./ads/<%= ads.imageId %>.mp4",<% } })%>];
+      var activeVideo = 0;
+      
+      myvid2.addEventListener('ended', function(e) {
+        // update the new active video index
+        activeVideo = (++activeVideo) % myvid2s.length;
+      
+        // update the video source and play
+        myvid2.src = myvid2s[activeVideo];
+        myvid2.play();
+      });
+      
+    //next video ads3
+    var myvid3 = document.getElementById('ads3');
+      var myvid3s = [<% adss.forEach(function(ads){ 
+            if(ads.type == "ads3"){
+            %>"./ads/<%= ads.imageId %>.mp4",<% } })%>];
+      var activeVideo = 0;
+      
+      myvid3.addEventListener('ended', function(e) {
+        // update the new active video index
+        activeVideo = (++activeVideo) % myvid3s.length;
+      
+        // update the video source and play
+        myvid3.src = myvid3s[activeVideo];
+        myvid3.play();
+      });
+      
+      
+            
+      </script>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>
