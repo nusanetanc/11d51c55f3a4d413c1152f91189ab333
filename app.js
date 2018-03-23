@@ -10,6 +10,7 @@ var index = require('./routes/index');
 var users = require('./routes/users');
 var ads = require('./routes/ads');
 var tvs = require('./routes/tv');
+var client = require('./routes/client');
 
 var app = express();
 var port = process.env.API_PORT || 8081;
