@@ -69,7 +69,7 @@
     <div class="tv-container">
       <div class="row tv-subcontainer">
         <div id="ads-1">
-          <video id="ads1" src="https://tv-advertisement-purwanto1337.c9users.io/ads/1.mp4" width="100%" height="100%" style="background:white" autoplay muted>
+          <video id="ads1" src="http://103.253.115.140:3000/ads/1.mp4" width="100%" height="100%" style="background:white" autoplay muted>
           </video>
         </div>
         <div id="tv">
@@ -78,11 +78,11 @@
       </div>
       <div class="row tv-subcontainer">
         <div id="ads-2">
-          <video id="ads2" src="https://tv-advertisement-purwanto1337.c9users.io/ads/2.mp4" width="100%" height="100%"  autoplay muted>
+          <video id="ads2" src="http://103.253.115.140:3000/ads/2.mp4" width="100%" height="100%"  autoplay muted>
           </video>
         </div>
         <div id="ads-3">
-          <video id="ads3" src="https://tv-advertisement-purwanto1337.c9users.io/ads/4.mp4" width="100%" height="100%"  muted autoplay>
+          <video id="ads3" src="http://103.253.115.140:3000/ads/4.mp4" width="100%" height="100%"  muted autoplay>
           </video>
         </div>
       </div>
@@ -109,7 +109,7 @@
     var myvid1 = document.getElementById('ads1');
       var myvid1s = [<% adss.forEach(function(ads){ 
             if(ads.type == "ads1"){
-            %>"https://tv-advertisement-purwanto1337.c9users.io/ads/<%= ads.imageId %>.mp4",<% } })%>];
+            %>"http://103.253.115.140:3000/ads/<%= ads.imageId %>.mp4",<% } })%>];
       var activeVideo = 0;
       
       myvid1.addEventListener('ended', function(e) {
@@ -124,7 +124,7 @@
     var myvid2 = document.getElementById('ads2');
       var myvid2s = [<% adss.forEach(function(ads){ 
             if(ads.type == "ads2"){
-            %>"https://tv-advertisement-purwanto1337.c9users.io/ads/<%= ads.imageId %>.mp4",<% } })%>];
+            %>"http://103.253.115.140:3000/ads/<%= ads.imageId %>.mp4",<% } })%>];
       var activeVideo = 0;
       
       myvid2.addEventListener('ended', function(e) {
@@ -140,7 +140,7 @@
     var myvid3 = document.getElementById('ads3');
       var myvid3s = [<% adss.forEach(function(ads){ 
             if(ads.type == "ads3"){
-            %>"https://tv-advertisement-purwanto1337.c9users.io/ads/<%= ads.imageId %>.mp4",<% } })%>];
+            %>"http://103.253.115.140:3000/ads/<%= ads.imageId %>.mp4",<% } })%>];
       var activeVideo = 0;
       
       myvid3.addEventListener('ended', function(e) {
