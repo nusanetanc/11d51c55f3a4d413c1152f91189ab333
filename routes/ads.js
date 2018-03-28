@@ -3,6 +3,7 @@ const fileUpload = require('express-fileupload');
 var randomstring = require("randomstring");
 var router = express.Router();
 var Ads = require('../models/ads');
+var Imparation = require('../models/imparation');
 
 router.use(fileUpload());
 
@@ -65,13 +66,13 @@ router.get('/list', function(req, res, next) {
 
 /* Count Ads. */
 router.post('/count', function(req, res, next) {
-  var ads = new Ads({
+  var imparation = new Imparation({
     ads: req.body.ads,
-    date: req.body.cityOption,
-    time : req.body.placeOption,
-    tvid : req.body.wordsText
+    datetime: req.body.datetime,
+    type: req.body.type,
+    tvid: req.body.tvid
   })
-  ads.save(function(err, result) {
+  imparation.save(function(err, result) {
     if (err) {
       return res.status(404).json({
         title: "An error occurred",
