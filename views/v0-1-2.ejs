@@ -119,6 +119,16 @@
         // update the video source and play
         myvid1.src = myvid1s[activeVideo];
         myvid1.play();
+        var videoname = myvid1.src.substring(53);
+        var url = 'https://tv-advertisement-purwanto1337.c9users.io/ads/count';
+        // The data we are going to send in our request
+        fetch(url, {
+        method: 'POST',
+        headers: {
+              'Content-Type': 'application/x-www-form-urlencoded'
+            },
+        body: "ads="+videoname+"&datetime="+Date()+"&type=ads1&tvid=<%= tvid %>"
+        })
       });
      //next video ads2
     var myvid2 = document.getElementById('ads2');
@@ -134,6 +144,16 @@
         // update the video source and play
         myvid2.src = myvid2s[activeVideo];
         myvid2.play();
+        var videoname = myvid2.src.substring(53);
+        var url = 'https://tv-advertisement-purwanto1337.c9users.io/ads/count';
+        // The data we are going to send in our request
+        fetch(url, {
+        method: 'POST',
+        headers: {
+              'Content-Type': 'application/x-www-form-urlencoded'
+            },
+        body: "ads="+videoname+"&datetime="+Date()+"&type=ads2&tvid=<%= tvid %>"
+        })
       });
       
     //next video ads3
@@ -150,6 +170,16 @@
         // update the video source and play
         myvid3.src = myvid3s[activeVideo];
         myvid3.play();
+        var videoname = myvid3.src.substring(53);
+        var url = 'https://tv-advertisement-purwanto1337.c9users.io/ads/count';
+        // The data we are going to send in our request
+        fetch(url, {
+        method: 'POST',
+        headers: {
+              'Content-Type': 'application/x-www-form-urlencoded'
+            },
+        body: "ads="+videoname+"&datetime="+Date()+"&type=ads3&tvid=<%= tvid %>"
+        })
       });
       
     //Swap Layout after 15 minutes (left to right)
