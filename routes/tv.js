@@ -15,7 +15,7 @@ router.get('/online/:id', function(req, res, next) {
             );
         } else {
           Ads.find(function(err, adss) {
-            res.render('v0-1-2',{adss : adss});
+            res.render('v0-1-2',{adss : adss, tvid: req.params.id});
           });
         }
     })
