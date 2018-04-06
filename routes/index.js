@@ -73,6 +73,16 @@ router.get('/admin/ads', function(req, res, next) {
   }
 });
 
+router.get('/admin/impr', function(req, res, next) {
+  if(req.session.active == "" || req.session.active == null || req.session.active == "0"){
+    res.redirect('/admin/signin');
+  } else {
+    Ads.find(function(err, adss) {
+      res.render('impression', { adss : adss, title: 'Administrator - Impression' });
+    });
+  }
+});
+
 router.get('/admin', function(req, res, next) {
   if(req.session.active == "" || req.session.active == null || req.session.active == "0"){
     res.redirect('/admin/signin');

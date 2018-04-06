@@ -86,4 +86,13 @@ router.post('/count', function(req, res, next) {
   });
 });
 
+/* GET Ads. */
+router.get('/viewcount/:ads', function(req, res, next) {
+      Imparation.count({ads : req.params.ads}, function(err, imprs) {
+       res.json({
+         total : imprs });
+   });
+});
+
+
 module.exports = router;
