@@ -117,13 +117,13 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                  <a class="nav-link" href="http://103.253.115.140/admin/ads">Ad <span class="sr-only">(current)</span></a>
+                  <a class="nav-link" href="http://103.253.115.140:3000/admin/ads">Ad <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item active">
-                  <a class="nav-link" href="http://103.253.115.140/admin/tv">Tv <span class="sr-only">(current)</span></a>
+                  <a class="nav-link" href="http://103.253.115.140:3000/admin/tv">Tv <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item active">
-                  <a class="nav-link" href="http://103.253.115.140/admin/impr">Impression <span class="sr-only">(current)</span></a>
+                  <a class="nav-link" href="http://103.253.115.140:3000/admin/impr">Impression <span class="sr-only">(current)</span></a>
                 </li>
             </div>
             <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
@@ -150,7 +150,7 @@
               <% adss.forEach(function(ads){
               if(ads.type !== "runningtext"){ %>
               <tr>
-                <td><a href="http://103.253.115.140/ads/<%= ads.imageId %>.mp4"><%= ads.imageId %></a></td>
+                <td><a href="http://103.253.115.140:3000/ads/<%= ads.imageId %>.mp4"><%= ads.imageId %></a></td>
                 <td> <!-- Button trigger modal -->
                   <button  onclick="myFunction('<%= ads.imageId %>.mp4')" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
                     view
