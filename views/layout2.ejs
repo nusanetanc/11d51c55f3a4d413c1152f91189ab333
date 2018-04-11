@@ -62,7 +62,7 @@
       <div class="row">
         <div class="tv-subcontainer">
           <div id="ads-3">
-            <video id="ads3" src="http://103.253.115.140:3000/ads/4.mp4" width="100%" height="100%"  muted autoplay>
+            <video id="ads5" src="http://103.253.115.140:3000/ads/4.mp4" width="100%" height="100%"  muted autoplay>
             </video>
           </div>
         </div>
@@ -89,20 +89,20 @@
     <script>
       
     //next video ads4
-    var myvid3 = document.getElementById('ads3');
-      var myvid3s = [<% adss.forEach(function(ads){ 
-            if(ads.type == "ads3"){
+    var myvid5 = document.getElementById('ads5');
+      var myvid5s = [<% adss.forEach(function(ads){ 
+            if(ads.type == "ads5"){
             %>"http://103.253.115.140:3000/ads/<%= ads.imageId %>.mp4",<% } })%>];
       var activeVideo = 0;
       
-      myvid3.addEventListener('ended', function(e) {
+      myvid5.addEventListener('ended', function(e) {
         // update the new active video index
-        activeVideo = (++activeVideo) % myvid3s.length;
+        activeVideo = (++activeVideo) % myvid5s.length;
       
         // update the video source and play
-        myvid3.src = myvid3s[activeVideo];
-        myvid3.play();
-        var videoname = myvid3.src.substring(53);
+        myvid5.src = myvid5s[activeVideo];
+        myvid5.play();
+        var videoname = myvid5.src.substring(53);
         var url = 'http://103.253.115.140:3000/ads/count';
         // The data we are going to send in our request
         fetch(url, {
@@ -110,7 +110,7 @@
         headers: {
               'Content-Type': 'application/x-www-form-urlencoded'
             },
-        body: "ads="+videoname+"&datetime="+Date()+"&type=ads3&tvid=<%= tvid %>"
+        body: "ads="+videoname+"&datetime="+Date()+"&type=ads5&tvid=<%= tvid %>"
         })
       });
       

@@ -214,7 +214,15 @@
                     <div class="form-check">
                       <input onclick="javascript:typeadsCheck();" class="form-check-input position-static" type="radio" name="adsOption" id="runningtext" value="runningtext" aria-label="...">
                       <label class="form-check-label" for="runningtext">
-                        Running Text
+                       Ads4 / Running Text
+                      </label>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="form-check">
+                      <input onclick="javascript:typeadsCheck();" class="form-check-input position-static" type="radio" name="adsOption" id="ads5" value="ads5" aria-label="...">
+                      <label class="form-check-label" for="runningtext">
+                       Ads5
                       </label>
                     </div>
                   </div>
@@ -293,6 +301,10 @@
         else if (document.getElementById('runningtext').checked) {
             document.getElementById('adsForm').style.display = 'none';
             document.getElementById('runningtextForm').style.display = 'block';
+        }
+        else if (document.getElementById('ads5').checked) {
+            document.getElementById('adsForm').style.display = 'block';
+            document.getElementById('runningtextForm').style.display = 'none';
         }
         else{
             document.getElementById('adsForm').style.display = 'none';
