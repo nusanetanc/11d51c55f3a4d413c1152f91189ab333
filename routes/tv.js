@@ -5,17 +5,70 @@ var Tv = require('../models/tv');
 var Ads = require('../models/ads');
 
 /* Add Tv. */
-router.get('/online/:id', function(req, res, next) {
+router.get('/online/1/:id', function(req, res, next) {
     Tv.findOne({tvId: req.params.id}, function(err, doc){
         if (err) {
             res.render('tv-sign', { title: 'An error occured' });
         } else if (!doc) {
             return res.status(404).json(
-                'User could not be found'
+                'id could not be found'
             );
         } else {
           Ads.find(function(err, adss) {
-            res.render('v0-1-2',{adss : adss, tvid: req.params.id});
+            res.render('layout1',{adss : adss, tvid: req.params.id});
+          });
+        }
+    })
+});
+
+
+
+/* Add Tv. */
+router.get('/online/2/:id', function(req, res, next) {
+    Tv.findOne({tvId: req.params.id}, function(err, doc){
+        if (err) {
+            res.render('tv-sign', { title: 'An error occured' });
+        } else if (!doc) {
+            return res.status(404).json(
+                'id could not be found'
+            );
+        } else {
+          Ads.find(function(err, adss) {
+            res.render('layout2',{adss : adss, tvid: req.params.id});
+          });
+        }
+    })
+});
+
+/* Add Tv. */
+router.get('/online/3/:id', function(req, res, next) {
+    Tv.findOne({tvId: req.params.id}, function(err, doc){
+        if (err) {
+            res.render('tv-sign', { title: 'An error occured' });
+        } else if (!doc) {
+            return res.status(404).json(
+                'id could not be found'
+            );
+        } else {
+          Ads.find(function(err, adss) {
+            res.render('layout3',{adss : adss, tvid: req.params.id});
+          });
+        }
+    })
+});
+
+/* Add Tv. */
+router.get('/online/4/:id', function(req, res, next) {
+    Tv.findOne({tvId: req.params.id}, function(err, doc){
+        if (err) {
+            res.render('tv-sign', { title: 'An error occured' });
+        } else if (!doc) {
+            return res.status(404).json(
+                'id could not be found'
+            );
+        } else {
+          Ads.find(function(err, adss) {
+            res.render('layout4',{adss : adss, tvid: req.params.id});
           });
         }
     })

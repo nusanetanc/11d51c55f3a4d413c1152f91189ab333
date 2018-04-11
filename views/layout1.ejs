@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= tvid %></title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  </head>
+  <style>
+    body,
+    html{
+        overflow: hidden;
+        margin: 0;
+        padding: 0;
+    }
+    .tv-container {
+        margin-left:15px;
+        padding:0;
+        display:flex;
+        flex-flow:row wrap;
+        width:100vw;
+        height:100vh;
+    }
+    .tv-subcontainer {
+        display:flex;
+        flex-flow:row wrap;
+    }
+    #ads-1 {
+        width: calc(100vw - 70.3125vw);
+        height:calc(100vh - 29.6291vh);
+    }
+    #tv {
+        width: calc(100vw - 29.6875vw);
+        height:calc(100vh - 29.6291vh);
+        order:2;
+    }
+    #ads-2 {
+        width: calc(100vw - 23.0209vw);
+        height:calc(100vh - 76.851vh);
+    }
+    #ads-3 {
+        width: calc(100vw - 76.9791vw);
+        height:calc(100vh - 76.851vh);
+        order:2;
+    }
+    #clock {
+        height:calc(100vh - 93.5181vh);
+        width:9vw;
+        float: left;
+        color:#fff;
+        background-color: #9b1925;
+        text-align: center;
+        line-height:calc(100vh - 93.5181vh);
+        font-size: 33px;
+        font-weight: 700;
+    }
+    .running-text {
+        background-color:#c32533;
+        width:91vw;
+        height:calc(100vh - 93.5181vh);
+        float:left;
+        color: #fff;
+        line-height:calc(100vh - 93.5181vh);
+        padding:0 0.8vh 0 0.8vh;
+        text-align: center;
+        font-size: 33px;
+        text-transform: uppercase;
+    }
+  </style>
+  <body onload="startTime()">
+    <div class="tv-container">
+      <div class="row tv-subcontainer">
+        <div id="ads-1">
+          <video id="ads1" src="http://103.253.115.140:3000/ads/1.mp4" width="100%" height="100%" style="background:white" autoplay muted>
+          </video>
+        </div>
+        <div id="tv">
+          <iframe frameborder="0" width="100%" height="100%" src="https://www.dailymotion.com/embed/video/k2RCNvLTp2kFCFkZD3I?autoplay=1" allowfullscreen></iframe>
+        </div>
+      </div>
+      <div class="row tv-subcontainer">
+        <div id="ads-2">
+          <video id="ads2" src="http://103.253.115.140:3000/ads/2.mp4" width="100%" height="100%"  autoplay muted>
+          </video>
+        </div>
+        <div id="ads-3">
+          <video id="ads3" src="http://103.253.115.140:3000/ads/4.mp4" width="100%" height="100%"  muted autoplay>
+          </video>
+        </div>
+      </div>
+      <div class="row">
+        <div id="clock"></div>
+        <div class="running-text">
+          <marquee style="color:#fff; text-align: center;">
+            <% adss.forEach(function(ads){ 
+            if(ads.type == "runningtext"){
+            %>
+              <%= ads.words %> - 
+            <% } })%>
+          </marquee>
+        </div>
+      </div>
+    </div>
+    
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script>
+        //next video ads1
+    var myvid1 = document.getElementById('ads1');
+      var myvid1s = [<% adss.forEach(function(ads){ 
+            if(ads.type == "ads1"){
+            %>"http://103.253.115.140:3000/ads/<%= ads.imageId %>.mp4",<% } })%>];
+      var activeVideo = 0;
+      
+      myvid1.addEventListener('ended', function(e) {
+        // update the new active video index
+        activeVideo = (++activeVideo) % myvid1s.length;
+      
+        // update the video source and play
+        myvid1.src = myvid1s[activeVideo];
+        myvid1.play();
+        var videoname = myvid1.src.substring(53);
+        var url = 'http://103.253.115.140:3000/ads/count';
+        // The data we are going to send in our request
+        fetch(url, {
+        method: 'POST',
+        headers: {
+              'Content-Type': 'application/x-www-form-urlencoded'
+            },
+        body: "ads="+videoname+"&datetime="+Date()+"&type=ads1&tvid=<%= tvid %>"
+        })
+      });
+     //next video ads2
+    var myvid2 = document.getElementById('ads2');
+      var myvid2s = [<% adss.forEach(function(ads){ 
+            if(ads.type == "ads2"){
+            %>"http://103.253.115.140:3000/ads/<%= ads.imageId %>.mp4",<% } })%>];
+      var activeVideo = 0;
+      
+      myvid2.addEventListener('ended', function(e) {
+        // update the new active video index
+        activeVideo = (++activeVideo) % myvid2s.length;
+      
+        // update the video source and play
+        myvid2.src = myvid2s[activeVideo];
+        myvid2.play();
+        var videoname = myvid2.src.substring(53);
+        var url = 'http://103.253.115.140:3000/ads/count';
+        // The data we are going to send in our request
+        fetch(url, {
+        method: 'POST',
+        headers: {
+              'Content-Type': 'application/x-www-form-urlencoded'
+            },
+        body: "ads="+videoname+"&datetime="+Date()+"&type=ads2&tvid=<%= tvid %>"
+        })
+      });
+      
+    //next video ads3
+    var myvid3 = document.getElementById('ads3');
+      var myvid3s = [<% adss.forEach(function(ads){ 
+            if(ads.type == "ads3"){
+            %>"http://103.253.115.140:3000/ads/<%= ads.imageId %>.mp4",<% } })%>];
+      var activeVideo = 0;
+      
+      myvid3.addEventListener('ended', function(e) {
+        // update the new active video index
+        activeVideo = (++activeVideo) % myvid3s.length;
+      
+        // update the video source and play
+        myvid3.src = myvid3s[activeVideo];
+        myvid3.play();
+        var videoname = myvid3.src.substring(53);
+        var url = 'http://103.253.115.140:3000/ads/count';
+        // The data we are going to send in our request
+        fetch(url, {
+        method: 'POST',
+        headers: {
+              'Content-Type': 'application/x-www-form-urlencoded'
+            },
+        body: "ads="+videoname+"&datetime="+Date()+"&type=ads3&tvid=<%= tvid %>"
+        })
+      });
+      
+    //Swap Layout after 15 minutes (left to right)
+    var text = ["1", "3"];
+    var counter = 0;
+    var topLayout = document.getElementById("ads-1");
+    var bottomLayout = document.getElementById("ads-2");
+    setInterval(change, 900000);
+    function change() {
+      topLayout.style.order = text[counter];
+      bottomLayout.style.order = text[counter];
+      counter++;
+      if (counter >= text.length) {
+        counter = 0;
+      }
+    }
+    
+    //Clock
+    function startTime() {
+      var today = new Date();
+      var h = today.getHours();
+      var m = today.getMinutes();
+      m = checkTime(m);
+      document.getElementById('clock').innerHTML =
+      h + ":" + m + " WIB";
+      var t = setTimeout(startTime, 500);
+    }
+    function checkTime(i) {
+        if (i < 10) {i = "0" + i};
+        return i;
+    }
+    </script>
+  </body>
+</html>
