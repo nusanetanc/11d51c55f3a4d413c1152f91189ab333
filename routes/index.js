@@ -78,8 +78,10 @@ router.get('/admin/impr', function(req, res, next) {
     res.redirect('/admin/signin');
   } else {
     Ads.find(function(err, adss) {
-      res.render('impression', { adss : adss, title: 'Administrator - Impression' });
-    });
+      Tv.find(function(err, tvs) {
+        res.render('impression', { adss : adss, tvs : tvs, title: 'Administrator - Impression' });
+      });
+      });
   }
 });
 
