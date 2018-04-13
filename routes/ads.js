@@ -94,5 +94,24 @@ router.get('/viewcount/:ads', function(req, res, next) {
    });
 });
 
+/* GET Ads. */
+router.get('/listview', function(req, res, next) {
+      res.redirect('/admin/impr');
+});
+
+/* GET Ads. */
+router.post('/listview', function(req, res, next) {
+      Imparation.find({ads: req.body.ads, tvid: req.body.tv, datetime: {"$gte": new Date("2018-04-07"), "$lt": new Date("2015-04-15") }}, function(err, imparations){
+        Imparation.count({ads: req.body.ads, tvid: req.body.tv}, function(err, imprs) {
+        if (err) {
+            res.render('listview',{result: 'An error occured', imparations : imparations});
+        } else if (!imparations) {
+            res.render('listview',{result : 'Imparation could not be found', imparations : imparations});
+        } else {
+          res.render('listview',{result : 'Total Imparation '+imprs, imparations : imparations});
+        }
+        })
+    })
+});
 
 module.exports = router;

@@ -139,42 +139,37 @@
       
     </div>
     <div style="max-width:800px;margin:0 auto;margin-top:50px;">
-          <table class="table">
-            <thead>
-              <tr>
-                <th scope="col">Ads</th>
-                <th scope="col">Total Impression</th>
-              </tr>
-            </thead>
-            <tbody>
-              <% adss.forEach(function(ads){
-              if(ads.type !== "runningtext"){ %>
-              <tr>
-                <td><a href="http://103.253.115.140:3000/ads/<%= ads.imageId %>.mp4"><%= ads.imageId %></a></td>
-                <td> <!-- Button trigger modal -->
-                  <button  onclick="myFunction('<%= ads.imageId %>')" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-                    view
-                  </button>
-              </tr>
-              <% } }) %>
-            </tbody>
-          </table>
-    </div>
-    <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 id="ads" class="modal-title" id="exampleModalLabel"></h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
+        <form method="post" action="/ads/listview">
+          <div class="form-group">
+            <label for="ads">Ads -Advertiser</label>
+            <select class="form-control" id="ads" name="ads">
+              <%  adss.forEach(function(ads){ %>
+                <option value="<%= ads.imageId %>.mp4"><%= ads.imageId %> - <%= ads.advertisers %></option>
+              <% }) %>
+              <option value="airasia.mp4">airasia.mp4</option>
+            </select>
           </div>
-          <div class="modal-body">
-            Total Imprasion : <h4 id="count"></h4>
+          <div class="form-group">
+            <label for="tv">Tv Id</label>
+            <select class="form-control" id="tv" name="tv">
+              <%  tvs.forEach(function(tv){ %>
+              <option value="<%= tv.tvId %>"><%= tv.tvId %> - <%= tv.place %> - <%= tv.city %></option>
+              <% }) %>
+            </select>
           </div>
-        </div>
-      </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">Date</label>
+              <div class="row" id="dateShowing" name="dateShowing">
+                <div class="col">
+                  <input type="date" id="dateStart" name="dateStart" class="form-control">
+                </div>
+                <div class="col">
+                  <input type="date" id="dateStop" name="dateStop" name="dateStop" class="form-control">
+                </div>
+              </div>
+          </div>
+          <input type="submit" class="btn btn-primary" value="submit">
+        </form>
     </div>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="/javascripts/countads.js"></script>

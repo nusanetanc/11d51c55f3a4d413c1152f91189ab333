@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="UTF-8"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <meta name="author" content=""/>
+    <meta name="language" content=""/>
+    <meta name="description" content=""/>
+    <meta name="google-site-verification" content=""/>
+    <meta property="og:url" content=""/>
+    <meta property="og:title" content=""/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:description" content=""/>
+    <meta property="og:image" content=""/>
+    <meta name="twitter:description" content=""/>
+    <meta name="twitter:image:src" content=""/>
+    <meta name="twitter:title" content=""/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:site" content=""/>
+    <meta name="twitter:creator" content=""/>
+    <link rel="shortcut icon" href=""/>
+    <link rel="stylesheet" href="css/style.css"/>
+    <!-- Bootstrap CSS Fontawesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+    <title>Andal Advertise - Login</title>
+    <!-- Structure content implementation -->
+    <style type="text/css">
+      .login-container {
+        background: linear-gradient(to top, #e1e1e1, #f8fcff);
+        height:100vh;
+        padding:80px 15px;
+      }
+      .login-card {
+        margin:0 auto;
+        max-width:400px;
+        padding:40px 50px 70px 50px;
+        text-align:center;
+      }
+      .login-card img {
+        height:80px;
+        margin:0 0 40px 0;
+      }
+      .login-card form input {
+        margin-bottom:10px;
+        padding-bottom:9px;
+      }
+      .login-card ::placeholder {
+        color: #aaa;
+        font-size:14px;
+        opacity: 1;
+      }
+      .login-card :-ms-input-placeholder {
+        color: #999;
+      }
+      .login-card ::-ms-input-placeholder {
+        color: #999;
+      }
+      .login-footer {
+        text-align: center;
+        margin: 50px 0;
+        font-size: 14px;
+        color: #999;
+      }
+
+      
+      /* Andal component */
+      .andal-button {
+        background: linear-gradient(-90deg, #bbb, #777);
+        border:0px;
+        font-size:13px;
+        padding-top:12px;
+        padding-bottom:12px !important;
+        color:#fff;
+        font-weight:300;
+        letter-spacing:0.6px;
+        width:100%;
+        margin-top:15px;
+        border-radius:3px;
+      }
+      .andal-card {
+        background-color:#fff;
+        transition: box-shadow .30s;
+        box-shadow: 0 3px 9px 1px rgba(46,61,73,0.1);
+        border-radius:3px;
+      }
+      .andal-card:hover {
+        box-shadow: 0 1px 1px 0px rgba(46,61,73,0.1);
+        transition: box-shadow .30s;
+      }
+      
+      
+      
+      
+      .navbar-container {
+        background: linear-gradient(-90deg, #777, #575454);
+      }
+      .admin-navbar {
+        max-width:800px;
+        margin:0 auto;
+      }
+      .add-card {
+        margin-top: 30px;
+        margin-bottom: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="navbar-container">
+      <nav class="navbar navbar-expand-lg navbar-dark admin-navbar">
+          <a class="navbar-brand" href="#">Andal Advertise</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                  <a class="nav-link" href="http://103.253.115.140:3000/admin/ads">Ad <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                  <a class="nav-link" href="http://103.253.115.140:3000/admin/tv">Tv <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                  <a class="nav-link" href="http://103.253.115.140:3000/admin/impr">Impression <span class="sr-only">(current)</span></a>
+                </li>
+            </div>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+              <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                      
+              </ul>
+              <form class="form-inline my-2 my-lg-0"> 
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Logout</button>
+              </form>
+          </div>
+      </nav>
+      
+      
+    </div>
+    <div style="max-width:800px;margin:0 auto;margin-top:50px;">
+      <div class="alert alert-light" role="alert">
+        <%= result %>
+      </div>
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">Date Time</th>
+            <th scope="col">TV Id</th>
+            <th scope="col">Ads</th>
+            <th scope="col">Type</th>
+          </tr>
+        </thead>
+        <tbody>
+        <%  imparations.forEach(function(imparation){ %>
+          <tr>
+            <th scope="row"><%= imparation.datetime %></th>
+            <td><%= imparation.tvid %></td>
+            <td><%= imparation.ads %></td>
+            <td><%= imparation.type %></td>
+          </tr>
+          <% }) %>
+        </tbody>
+      </table>
+    </div>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="/javascripts/countads.js"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>
