@@ -140,7 +140,7 @@
     </div>
     <% tvs.forEach(function(tv){ %>
     <div style="max-width:800px;margin:0 auto;margin-top:50px;">
-      <form method="post" action="http://103.253.115.140:3000/admin/tv/edit/<%= tv._id %>">
+      <form method="post" action="http://103.253.115.140:3000/tv/edit/<%= tv._id %>">
         <div class="form-group">
           <label for="cityOption">City</label>
           <input type="text" class="form-control" id="cityOption" name="cityOption" value="<%= tv.city %>">
