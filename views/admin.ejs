@@ -165,6 +165,8 @@
                 <th scope="col">Place</th>
                 <th scope="col">Views</th>
                 <th scope="col">Advertiser</th>
+                <th scope="col">Status</th>
+                <th scope="col"></th>
               </tr>
             </thead>
             <tbody>
@@ -178,6 +180,17 @@
                 <% } %>
                 <td><%= ads.city %> - <%= ads.place %></td>
                 <td><%= ads.imprasion %><%= ads.dateStart %><%= ads.dateStop %></td>
+                <td><%= ads.advertisers %></td>
+                <% if(ads.status == "1"){ %>
+                  <td>Active</td>
+                <% } else if(ads.status == "0"){ %>
+                  <td>Un Active</td>
+                <% } %>
+                <% if(ads.type == "runningtext"){ %>
+                <td><a href="http://103.253.115.140:3000/admin/ads/text/edit/<%= ads.imageId %>" type="button" class="btn btn-outline-dark">Edit</a></td>
+                <% } else { %>
+                <td><a href="http://103.253.115.140:3000/admin/ads/visual/edit/<%= ads.imageId %>" type="button" class="btn btn-outline-dark">Edit</a></td>
+                 <% } %>
               </tr>
               <% }) %>
             </tbody>

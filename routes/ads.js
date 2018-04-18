@@ -64,6 +64,27 @@ router.get('/list', function(req, res, next) {
    });
 });
 
+router.post('/visual/edit/:id', function(req, res, next) {
+
+    Ads.findById(req.params.id, function(err, ads) {
+      
+        ads.type= req.body.adsOption;
+        ads.place= req.body.placeOption;
+        ads.city= req.body.cityOption;
+        ads.dateStart= req.body.dateStart;
+        ads.dateStop= req.body.dateStop;
+        ads.advertisers= req.body.AdvertiserOption;
+        ads.status= req.body.status;
+        
+      ads.save(function(err, result) {
+        if (err) {
+          res.redirect('/admin/ads');
+        }
+        res.redirect('/admin/ads');
+      });
+    });
+});
+
 /* Count Ads. */
 router.post('/count', function(req, res, next) {
   var imparation = new Imparation({

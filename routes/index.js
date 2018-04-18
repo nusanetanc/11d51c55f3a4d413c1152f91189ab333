@@ -85,6 +85,16 @@ router.get('/admin/impr', function(req, res, next) {
   }
 });
 
+router.get('/admin/ads/visual/edit/:id', function(req, res, next) {
+  if(req.session.active == "" || req.session.active == null || req.session.active == "0"){
+    res.redirect('/admin/signin');
+  } else {
+    Ads.find({imageId : req.params.id}, function(err, adss) {
+      res.render('editads1', { adss : adss, title: 'Administrator - EDIT ADS' });
+    });
+  }
+});
+
 router.get('/admin', function(req, res, next) {
   if(req.session.active == "" || req.session.active == null || req.session.active == "0"){
     res.redirect('/admin/signin');
