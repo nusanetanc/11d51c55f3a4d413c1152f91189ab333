@@ -86,9 +86,9 @@ router.post('/add', function(req, res, next) {
   })
   tv.save(function(err, result) {
      if (err) {
-      res.redirect('/v0-2/admin/tv/?message="An error occurred"');
+      res.redirect('admin/tv');
     }
-    res.redirect('/v0-2/admin/tv/?message="Ads Saved"');
+    res.redirect('/admin/tv');
   });
 });
 

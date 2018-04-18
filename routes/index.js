@@ -95,6 +95,16 @@ router.get('/admin/ads/visual/edit/:id', function(req, res, next) {
   }
 });
 
+router.get('/admin/tv/edit/:id', function(req, res, next) {
+  if(req.session.active == "" || req.session.active == null || req.session.active == "0"){
+    res.redirect('/admin/signin');
+  } else {
+    Tv.find({tvId : req.params.id}, function(err, tvs) {
+      res.render('edittv', { tvs : tvs, title: 'Administrator - EDIT ADS' });
+    });
+  }
+});
+
 router.get('/admin', function(req, res, next) {
   if(req.session.active == "" || req.session.active == null || req.session.active == "0"){
     res.redirect('/admin/signin');
