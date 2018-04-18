@@ -138,37 +138,29 @@
       
       
     </div>
+    <% adss.forEach(function(tvs){ %>
     <div style="max-width:800px;margin:0 auto;margin-top:50px;">
-            <form method="post" action="/tv/edit">
-              <div class="form-group">
-                <label for="cityOption">City</label>
-                <select class="custom-select" id="cityOption" name="cityOption">
-                   <option value="Jakarta">Jakarta</option>
-                   <option value="Bandung">Bandung</option>
-                   <option value="Pekanbaru">Pekanbaru</option>
-                </select>
-              </div>
-              <div class="form-group">
-                <label for="exampleInputEmail1">Place</label>
-                <input type="text" class="form-control" id="placeOption" name="placeOption">
-              </div>
-              <div class="form-group">
-                <label for="layoutOption">Layout</label>
-                <select class="custom-select" id="layoutOption" name="layoutOption">
-                  <option value="Layout1">Layout1</option>
-                  <option value="Layout2">Layout2</option>
-                </select>
-              </div>
-              <div class="form-group">
-                <label for="exampleInputEmail1">Status</label>
-                <select class="custom-select" id="statusOption" name="statusOption">
-                  <option value="1">Active</option>
-                  <option value="0">Un Active</option>
-                </select>
-              </div>
-               <input class="btn btn-lg btn-outline-secondary" type="submit" value="SUBMIT"/>
-            </form>
+      <form method="post" action="http://103.253.115.140:3000/admin/tv/edit/<%= tvs._id %>">
+        <div class="form-group">
+          <label for="cityOption">City</label>
+          <input type="text" class="form-control" id="cityOption" name="cityOption" value="<%= tvs.city %>">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Place</label>
+          <input type="text" class="form-control" id="placeOption" name="placeOption" value="<%= tvs.place %>" >
+        </div>
+        <div class="form-group">
+          <label for="layoutOption">Layout</label>
+          <input type="text" class="form-control" id="layoutOption" name="layoutOption" value="<%= tvs.layout %>">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Status</label>
+          <input type="text" class="form-control" id="statusOption" name="statusOption" value="<%= tvs.place %>">
+        </div>
+         <input class="btn btn-lg btn-outline-secondary" type="submit" value="SUBMIT"/>
+      </form>
     </div>
+    <% } %>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>

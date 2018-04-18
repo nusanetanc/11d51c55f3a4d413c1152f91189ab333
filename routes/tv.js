@@ -92,6 +92,24 @@ router.post('/add', function(req, res, next) {
   });
 });
 
+router.post('/edit/:id', function(req, res, next) {
+
+    Tv.findById(req.params.id, function(err, tvs) {
+      
+        tvs.city= req.body.cityOption;
+        tvs.place= req.body.placeOption;
+        tvs.status= req.body.statusOption;
+        tvs.layout= req.body.layoutOption;
+        
+      tvs.save(function(err, result) {
+        if (err) {
+          res.redirect('/admin/tv');
+        }
+        res.redirect('/admin/tv');
+      });
+    });
+});
+
 /* GET Tv. */
 router.get('/list', function(req, res, next) {
       Tv.find(function(err, tvs) {
