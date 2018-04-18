@@ -138,24 +138,24 @@
       
       
     </div>
-    <% adss.forEach(function(tvs){ %>
+    <% tvs.forEach(function(tv){ %>
     <div style="max-width:800px;margin:0 auto;margin-top:50px;">
-      <form method="post" action="http://103.253.115.140:3000/admin/tv/edit/<%= tvs._id %>">
+      <form method="post" action="http://103.253.115.140:3000/admin/tv/edit/<%= tv._id %>">
         <div class="form-group">
           <label for="cityOption">City</label>
-          <input type="text" class="form-control" id="cityOption" name="cityOption" value="<%= tvs.city %>">
+          <input type="text" class="form-control" id="cityOption" name="cityOption" value="<%= tv.city %>">
         </div>
         <div class="form-group">
           <label for="exampleInputEmail1">Place</label>
-          <input type="text" class="form-control" id="placeOption" name="placeOption" value="<%= tvs.place %>" >
+          <input type="text" class="form-control" id="placeOption" name="placeOption" value="<%= tv.place %>" >
         </div>
         <div class="form-group">
           <label for="layoutOption">Layout</label>
-          <input type="text" class="form-control" id="layoutOption" name="layoutOption" value="<%= tvs.layout %>">
+          <input type="text" class="form-control" id="layoutOption" name="layoutOption" value="<%= tv.layout %>">
         </div>
         <div class="form-group">
           <label for="exampleInputEmail1">Status</label>
-          <input type="text" class="form-control" id="statusOption" name="statusOption" value="<%= tvs.place %>">
+          <input type="text" class="form-control" id="statusOption" name="statusOption" value="<%= tv.place %>">
         </div>
          <input class="btn btn-lg btn-outline-secondary" type="submit" value="SUBMIT"/>
       </form>
