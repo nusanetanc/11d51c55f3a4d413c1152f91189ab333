@@ -163,6 +163,7 @@
                 <th scope="col">Id</th>
                 <th scope="col">Place</th>
                 <th scope="col">Status</th>
+                <th scope="col">Url</th>
               </tr>
             </thead>
             <tbody>
@@ -170,7 +171,16 @@
               <tr>
                 <th scope="row"><%= tvs.tvId %></th>
                 <td><%= tvs.city %> - <%= tvs.place %></td>
-                <td><%= tvs.status %></td>
+                <% if(tvs.status == "1"){ %>
+                  <td>Active</td>
+                <% } else if(tvs.status == "0"){ %>
+                  <td>Un Active</td>
+                <% } %>
+                <% if(tvs.layout == "Layout1"){ %>
+                  <td>http://103.253.115.140:3000/tv/online/1/<%= tvs.tvId %></td>
+                <% } else if(tvs.layout == "Layout1"){ %>
+                  <td>http://103.253.115.140:3000/tv/online/2/<%= tvs.tvId %></td>
+                <% } %>
               </tr>
               <% }) %>
             </tbody>
@@ -188,10 +198,14 @@
                 </select>
               </div>
               <div class="form-group">
-                <label for="exampleInputEmail1">Advertiser</label>
-                <select class="custom-select" id="placeOption" name="placeOption">
-                  <option value="Starbuck">Starbuck</option>
-                  <option value="Coffe Bean">Coffe Bean</option>
+                <label for="exampleInputEmail1">Place</label>
+                <input type="text" class="form-control" id="placeOption" name="placeOption" value="<%= ads.place %>">
+              </div>
+              <div class="form-group">
+                <label for="layoutOption">Layout</label>
+                <select class="custom-select" id="layoutOption" name="layoutOption">
+                  <option value="Layout1">Layout1</option>
+                  <option value="Layout2">Layout2</option>
                 </select>
               </div>
               <div class="form-group">
