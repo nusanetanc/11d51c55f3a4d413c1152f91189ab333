@@ -163,6 +163,7 @@
                 <th scope="col">Id</th>
                 <th scope="col">Place</th>
                 <th scope="col">Status</th>
+                <th scope="col">Layout</th>
                 <th scope="col">Url</th>
               </tr>
             </thead>
@@ -176,6 +177,7 @@
                 <% } else if(tvs.status == "0"){ %>
                   <td>Un Active</td>
                 <% } %>
+                  <td><%= tvs.layout %></td>
                 <% if(tvs.layout == "Layout1"){ %>
                   <td>http://103.253.115.140:3000/tv/online/1/<%= tvs.tvId %></td>
                 <% } else if(tvs.layout == "Layout1"){ %>
