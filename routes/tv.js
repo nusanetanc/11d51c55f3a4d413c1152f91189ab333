@@ -81,7 +81,8 @@ router.post('/add', function(req, res, next) {
     city: req.body.cityOption,
     place : req.body.placeOption,
     tvId : idRand,
-    status: req.body.statusOption
+    status: req.body.statusOption,
+    layout: req.body.layoutOption
   })
   tv.save(function(err, result) {
      if (err) {

@@ -5,7 +5,8 @@ var TvSchema   = new Schema({
     city: String,
     place: String,
     tvId : String,
-    status : String
+    status : String,
+    layout : String
 });
 
 module.exports = mongoose.model('Tv', TvSchema);
