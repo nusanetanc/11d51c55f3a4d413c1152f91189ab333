@@ -9,14 +9,26 @@ var mongoose   = require('mongoose');
 var index = require('./routes/index');
 var users = require('./routes/users');
 var ads = require('./routes/ads');
-var tvs = require('./routes/tv');
+//var tvs = require('./routes/tv');
 var client = require('./routes/client');
 
 var app = express();
+
+app.io = require('socket.io')();
+
+var tvs = require('./routes/tv')(app.io);
+
 var port = process.env.API_PORT || 8081;
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
+
+var server = app.listen(8081);
+
+var path = require('path');
+var filePath = "./public/test.html"
+var resolvedPath = path.resolve(filePath);
 
 mongoose.connect('mongodb://localhost:27017/andaladstv');
 

@@ -175,6 +175,25 @@ router.post('/admin/signup', function(req, res){
    }
 });
 
+/* Add Tv. */
+router.post('/tv/add', function(req, res, next) {
+  var idRand = randomstring.generate({length: 10, charset: 'QWERTYUIOPASDFGHJKLZXCVBNMqwertyuiopasdfghjklzxcvbnm0987654321'});
+  var tv = new Tv({
+    city: req.body.cityOption,
+    place : req.body.placeOption,
+    tvId : idRand,
+    status: req.body.statusOption,
+    layout: req.body.layoutOption
+  })
+  tv.save(function(err, result) {
+     if (err) {
+      res.redirect('/admin/tv');
+    }
+    res.redirect('/vadmin/tv/');
+  });
+});
+
+
 /* session get */
 router.get('/session', function(req, res, next) {
         res.status(201).json({
