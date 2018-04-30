@@ -197,7 +197,7 @@ router.post('/tv/add', function(req, res, next) {
 
 /* session get */
 router.get('/tv/status/:id', function(req, res, next) {
-  LogTv.find({tvId : req.params.id}, function(err, tvs) {
+  LogTv.find({tvId : req.params.id}, {limit: 1}, function(err, tvs) {
     res.send(tvs);
   });
 });
