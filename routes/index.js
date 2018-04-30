@@ -7,6 +7,7 @@ var router = express.Router();
 var Ads = require('../models/ads');
 var Tv = require('../models/tv');
 var User = require('../models/user');
+var LogTv = require('../models/logtv');
 
 // Use the session middleware
 
@@ -195,10 +196,10 @@ router.post('/tv/add', function(req, res, next) {
 
 
 /* session get */
-router.get('/session', function(req, res, next) {
-        res.status(201).json({
-            session: req.session.active
-        })   
+router.get('/tv/status/:id', function(req, res, next) {
+  LogTv.find({tvId : req.params.id}, function(err, tvs) {
+    res.send(tvs);
+  });
 });
 
 
