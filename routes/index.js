@@ -64,6 +64,16 @@ router.get('/admin/tv', function(req, res, next) {
   }
 });
 
+router.get('/admin/logtv', function(req, res, next) {
+  if(req.session.active == "" || req.session.active == null || req.session.active == "0"){
+    res.redirect('/admin/signin');
+  } else {
+    Tv.find(function(err, tvs) {
+        res.render('logtv', { title: 'Administrator', tvs :tvs });
+    });
+  }
+});
+
 router.get('/admin/ads', function(req, res, next) {
   if(req.session.active == "" || req.session.active == null || req.session.active == "0"){
     res.redirect('/admin/signin');
