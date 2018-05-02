@@ -111,8 +111,8 @@
       <script>
       $(document).ready(function(){
         $("button").click(function(){
-          alert('test')
             $.getJSON("http://103.253.115.140:3000/tv/status/XU2ZnOhcol", function(result){
+              alert(result)
                 $.each(result, function(i, field){
                     $("p").append(field + " ");
                 });
