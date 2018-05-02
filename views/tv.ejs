@@ -173,11 +173,7 @@
               <tr>
                 <th scope="row"><%= tvs.tvId %></th>
                 <td><%= tvs.city %> - <%= tvs.place %></td>
-                <% if(tvs.status == "1"){ %>
-                  <td>Active</td>
-                <% } else if(tvs.status == "0"){ %>
-                  <td>Un Active</td>
-                <% } %>
+                  <td><td><button onclick="myFunction('<%= tvs.tvId %>')">Status</button></td></td>
                   <td><%= tvs.layout %></td>
                 <% if(tvs.layout == "Layout1"){ %>
                   <td>http://103.253.115.140:3000/tv/online/1/<%= tvs.tvId %></td>
