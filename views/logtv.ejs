@@ -225,12 +225,12 @@
         </div>
       </div>
     </div>
-    <button onclick="myFunction()">Search</button>
+    <button onclick="myFunction('XU2ZnOhcol')">Search</button>
     <p id="statustv"></p>
     <script>
-      function myFunction() {
+      function myFunction(tvid) {
         alert('test')
-          $.getJSON("http://103.253.115.140:3000/tv/status/XU2ZnOhcol", function(json){
+          $.getJSON("http://103.253.115.140:3000/tv/status/"+tvid, function(json){
               alert(json)
             });
       }
