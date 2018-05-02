@@ -164,7 +164,7 @@
                 <th scope="col">Place</th>
                 <th scope="col">Status</th>
                 <th scope="col">Layout</th>
-                <th scope="col">Url</th>
+                <!-- <th scope="col">Url</th> -->
                 <th scope="col"></th>
               </tr>
             </thead>
@@ -175,11 +175,6 @@
                 <td><%= tvs.city %> - <%= tvs.place %></td>
                   <td><button onclick="myFunction('<%= tvs.tvId %>')">Status</button></td>
                   <td><%= tvs.layout %></td>
-                <% if(tvs.layout == "Layout1"){ %>
-                  <td>http://103.253.115.140:3000/tv/online/1/<%= tvs.tvId %></td>
-                <% } else if(tvs.layout == "Layout2"){ %>
-                  <td>http://103.253.115.140:3000/tv/online/2/<%= tvs.tvId %></td>
-                <% } %>
                 <td><a href="http://103.253.115.140:3000/admin/tv/edit/<%= tvs.tvId %>" type="button" class="btn btn-outline-dark">Edit</a></td>
               </tr>
               <% }) %>
