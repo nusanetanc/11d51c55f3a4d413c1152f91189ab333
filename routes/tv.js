@@ -73,40 +73,6 @@ module.exports = function (io) {
               Ads.find(function(err, adss) {
                 res.render('layout2',{adss : adss, tvid: req.params.id});
               });
-                console.log('socket')
-                //Socket.IO
-                io.on('connection', function(socket){
-                  console.log(req.params.id+' connected');
-                  var logtv = new LogTv({
-                        city: doc.city,
-                        place: doc.place,
-                        tvId : doc.tvId,
-                        status : 'connected',
-                        datetime : new Date(),
-                      })
-                      logtv.save(function(err, result) {
-                        if (err) {
-                          console.log(err)
-                        }
-                        console.log('log saved')
-                      });
-                  socket.on('disconnect', function(){
-                    console.log(req.params.id+' disconnected');
-                    var logtv = new LogTv({
-                        city: doc.city,
-                        place: doc.place,
-                        tvId : doc.tvId,
-                        status : 'disconnected',
-                        datetime : new Date(),
-                      })
-                      logtv.save(function(err, result) {
-                        if (err) {
-                          console.log(err)
-                        }
-                        console.log('log saved')
-                      });
-                  });
-                });
             }
         })
     });
