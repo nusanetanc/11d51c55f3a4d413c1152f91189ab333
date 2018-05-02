@@ -230,7 +230,7 @@
     <script>
       $(document).ready(function(){
         $("button").click(function(){
-            $.getJSON("demo_ajax_json.js", function(result){
+            $.getJSON("http://103.253.115.140:3000/tv/status/XU2ZnOhcol", function(result){
                 $.each(result, function(i, field){
                     $("p").append(field + " ");
                 });
